@@ -1,0 +1,358 @@
+{
+  "templeInfo": {
+    "name": "Ganapathi Temple",
+    "tagline": "Experience divine blessings through sacred rituals and ceremonies",
+    "description": "Remove obstacles and invite prosperity into your life."
+  },
+  
+ "activities": [
+  {
+    "id": 1,
+    "name": "Ganapathi Homam (గణపతి హోమము)",
+    "description": "Sacred fire ritual to invoke Lord Ganapathi's blessings",
+    "fullDescription": "Ganapathi Homam is a powerful Vedic fire ritual performed to remove obstacles and bring prosperity. This sacred ceremony involves chanting of mantras and offerings to the holy fire.",
+    "price": 500,
+    "duration": "2 hours",
+    "image": "/images/active1.png"
+  },
+  {
+    "id": 2,
+    "name": "Abhishekam (అభిషేకం)",
+    "description": "Holy bathing ceremony of Lord Ganapathi",
+    "fullDescription": "Abhishekam is the ceremonial bathing of the deity with various sacred substances like milk, honey, curd, and holy water.",
+    "price": 500,
+    "duration": "1.5 hours",
+    "image": "/images/active2.png"
+  },
+    {
+    "id": 5,
+    "name": "Modaka Homam (మోడక హోమము)",
+    "description": "Fire ritual with Modaka offering",
+    "fullDescription": "Modaka Homam is a sacred fire ritual offering Modakas, the favorite sweet of Lord Ganapathi, seeking prosperity and happiness.",
+    "price": 1000,
+    "duration": "2.5 hours",
+      "image": "/images/active3.png"
+  },
+    {
+    "id": 4,
+    "name": "Sampoorna Pooja (సంపూర్ణ పూజ)",
+    "description": "Complete ritual worship",
+    "fullDescription": "Sampoorna Pooja includes all major rituals performed with full devotion for complete blessings of Lord Ganapathi.",
+    "price": 1000,
+    "duration": "3 hours",
+    "image": "https://images.unsplash.com/photo-1599665123975-bb8fd9e32c93?w=500"
+  },
+  {
+    "id": 3,
+    "name": "Sahasranama Archana (సహస్రనామ అర్చన)",
+    "description": "Chanting of 1000 names of Lord Ganapathi",
+    "fullDescription": "Sahasranama Archana involves chanting of 1000 sacred names of Lord Ganapathi for seeking blessings and removing obstacles.",
+    "price": 500,
+    "duration": "3 hours",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=500"
+  }
+
+
+],
+
+  
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Deluxe AC Room",
+      "type": "ac",
+      "price": 2000,
+      "capacity": 3,
+      "features": ["Air Conditioning", "Attached Bathroom", "Hot Water", "TV"],
+      "description": "Comfortable AC room with all modern amenities"
+    },
+    {
+      "id": 2,
+      "name": "Standard AC Room",
+      "type": "ac",
+      "price": 1500,
+      "capacity": 3,
+      "features": ["Air Conditioning", "Attached Bathroom", "Hot Water"],
+      "description": "Standard AC room with basic amenities"
+    },
+    {
+      "id": 3,
+      "name": "Non-AC Room",
+      "type": "non-ac",
+      "price": 1000,
+      "capacity": 3,
+      "features": ["Fan", "Attached Bathroom", "Hot Water"],
+      "description": "Simple non-AC room for budget stay"
+    }
+  ],
+  
+  "ganapathis32": [
+    {
+      "id": 1,
+      "name": "Bala Ganapathi",
+      "description": "The childlike form representing innocence",
+      "fullDescription": "Bala Ganapathi is depicted as a child form of Lord Ganesha, representing purity, innocence, and the beginning of all things.",
+      "image": "https://images.unsplash.com/photo-1599696848568-1c85b9e7d7c2?w=500"
+    },
+    {
+      "id": 2,
+      "name": "Taruna Ganapathi",
+      "description": "The youthful form of Lord Ganesha",
+      "fullDescription": "Taruna Ganapathi represents the youthful energy and vigor of Lord Ganesha, symbolizing growth and development.",
+      "image": "https://images.unsplash.com/photo-1621491510317-0015e75fddc7?w=500"
+    },
+    {
+      "id": 3,
+      "name": "Bhakti Ganapathi",
+      "description": "The devotional form inspiring faith",
+      "fullDescription": "Bhakti Ganapathi is the form that inspires devotion and represents the path of devotion to reach the divine.",
+      "image": "https://images.unsplash.com/photo-1601379327922-24559c4c0b14?w=500"
+    },
+    {
+      "id": 4,
+      "name": "Vira Ganapathi",
+      "description": "The valiant warrior form",
+      "fullDescription": "Vira Ganapathi is the warrior form of Lord Ganesha, representing courage, strength, and protection from evil forces.",
+      "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=500"
+    },
+    {
+      "id": 5,
+      "name": "Shakti Ganapathi",
+      "description": "The powerful form with divine energy",
+      "fullDescription": "Shakti Ganapathi represents the divine energy and power that creates, sustains, and transforms the universe.",
+      "image": "https://images.unsplash.com/photo-1599696848568-1c85b9e7d7c2?w=500"
+    },
+    {
+      "id": 6,
+      "name": "Dvija Ganapathi",
+      "description": "The twice-born scholarly form",
+      "fullDescription": "Dvija Ganapathi represents wisdom, knowledge, and spiritual rebirth through learning and self-realization.",
+      "image": "https://images.unsplash.com/photo-1621491510317-0015e75fddc7?w=500"
+    },
+    {
+      "id": 7,
+      "name": "Siddhi Ganapathi",
+      "description": "The accomplished form granting success",
+      "fullDescription": "Siddhi Ganapathi grants spiritual accomplishments and success in all endeavors to sincere devotees.",
+      "image": "https://images.unsplash.com/photo-1601379327922-24559c4c0b14?w=500"
+    },
+    {
+      "id": 8,
+      "name": "Ucchishita Ganapathi",
+      "description": "The form of supreme bliss",
+      "fullDescription": "Ucchishita Ganapathi represents supreme bliss, contentment, and the state of ultimate satisfaction.",
+      "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=500"
+    }
+  ],
+  
+  "banquetHalls": [
+    {
+      "id": 1,
+      "name": "Kalayana Mandapam",
+      "capacity": 500,
+      "price": 25000,
+      "type": "ac",
+      "features": ["AC Hall", "Stage Setup", "Catering Available", "Parking"],
+      "description": "Grand AC hall perfect for weddings and large gatherings",
+      "image": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=500"
+    },
+    {
+      "id": 2,
+      "name": "Satsang Hall",
+      "capacity": 200,
+      "price": 15000,
+      "type": "ac",
+      "features": ["AC Hall", "Audio System", "Parking", "Projector"],
+      "description": "Medium-sized hall ideal for spiritual gatherings and conferences",
+      "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=500"
+    },
+    {
+      "id": 3,
+      "name": "Community Hall",
+      "capacity": 100,
+      "price": 8000,
+      "type": "non-ac",
+      "features": ["Fan Cooled", "Basic Setup", "Affordable", "Kitchen"],
+      "description": "Budget-friendly hall for community events and small functions",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=500"
+    }
+  ],
+  
+  "idols": [
+    {
+      "id": 1,
+      "name": "Clay Ganesha Idol",
+      "type": "clay",
+      "sizes": ["6\"", "12\"", "18\"", "24\""],
+      "price": 500,
+      "description": "Eco-friendly traditional clay idol for Ganesh Chaturthi",
+      "features": ["Eco-friendly", "Traditional Design", "Biodegradable"],
+      "image": "https://images.unsplash.com/photo-1561982775-2c2c2b7b7b1c?w=500"
+    },
+    {
+      "id": 2,
+      "name": "Plaster of Paris Ganesha",
+      "type": "plaster",
+      "sizes": ["12\"", "24\"", "36\""],
+      "price": 1500,
+      "description": "Beautifully crafted decorative idol with intricate designs",
+      "features": ["Decorative", "Intricate Designs", "Durable"],
+      "image": "https://images.unsplash.com/photo-1561982775-2c2c2b7b7b1c?w=500"
+    },
+    {
+      "id": 3,
+      "name": "Brass Ganapathi Idol",
+      "type": "brass",
+      "sizes": ["4\"", "8\"", "12\"", "18\""],
+      "price": 3000,
+      "description": "Permanent worship idol for home temple",
+      "features": ["Permanent", "Rust-proof", "Traditional Craftsmanship"],
+      "image": "https://images.unsplash.com/photo-1561982775-2c2c2b7b7b1c?w=500"
+    }
+  ],
+  
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "The Significance of Ganesh Chaturthi: A Complete Guide",
+      "category": "Festivals",
+      "date": "Jan 15",
+      "readTime": "8 min read",
+      "excerpt": "Discover the deep spiritual meaning behind Ganesh Chaturthi, one of the most celebrated Hindu festivals.",
+      "content": "Full article content here...",
+      "image":"/images/blog1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Understanding the 32 Forms of Lord Ganapathi",
+      "category": "Spirituality",
+      "date": "Jan 10",
+      "readTime": "10 min read",
+      "excerpt": "Explore the divine manifestations of Lord Ganesha in his 32 unique forms.",
+      "content": "Full article content here...",
+       "image":"/images/blog2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Power of Vedic Rituals in Modern Life",
+      "category": "Rituals",
+      "date": "Jan 5",
+      "readTime": "12 min read",
+      "excerpt": "Learn how ancient Vedic rituals remain relevant today.",
+      "content": "Full article content here...",
+       "image":"/images/blog3.jpg"
+    }
+  ],
+
+    "banquetHalls": [
+    {
+      "id": 1,
+      "name": "Ganesh Sabha Hall",
+      "image": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800",
+      "bannerImage": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600",
+      "type": "ac",
+      "capacity": 300,
+      "basePrice": 25000,
+      "price": 25000,
+      "cateringPrice": 5000,
+      "decorationPrice": 8000,
+      "avEquipmentPrice": 3000,
+      "location": "East Wing, Ground Floor",
+      "description": "A spacious and well-equipped banquet hall perfect for weddings, receptions, corporate events, and religious ceremonies.",
+      "features": [
+        "AC",
+        "WiFi",
+        "Parking",
+        "Catering Available",
+        "Sound System",
+        "Projector",
+        "Stage Setup"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Divine Garden Hall",
+      "image": "https://images.unsplash.com/photo-1549451371-64aa98a6f660?w=800",
+      "bannerImage": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600",
+      "type": "non-ac",
+      "capacity": 500,
+      "basePrice": 18000,
+      "price": 18000,
+      "cateringPrice": 4000,
+      "decorationPrice": 6000,
+      "avEquipmentPrice": 2000,
+      "location": "Garden Area",
+      "description": "Beautiful open-air garden hall perfect for outdoor events and ceremonies.",
+      "features": [
+        "Open Air",
+        "Garden View",
+        "Parking",
+        "Basic Sound",
+        "Decoration Available"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lotus Conference Hall",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800",
+      "bannerImage": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600",
+      "type": "ac",
+      "capacity": 150,
+      "basePrice": 35000,
+      "price": 35000,
+      "cateringPrice": 6000,
+      "decorationPrice": 10000,
+      "avEquipmentPrice": 4000,
+      "location": "First Floor, Main Building",
+      "description": "Modern conference hall with advanced audio-visual facilities for corporate events.",
+      "features": [
+        "AC",
+        "WiFi",
+        "Projector",
+        "Whiteboard",
+        "Sound System",
+        "Video Conferencing"
+      ]
+    }
+  ],
+  
+ "idols": [
+  {
+    "id": 1,
+    "name": "Sitting Ganesha Idol",
+    "description": "A beautiful sitting posture Ganapathi idol, perfect for home worship and meditation.",
+    "type": "clay",
+    "price": 2500,
+    "rating": 4.8,
+    "reviews": 124,
+    "image": "https://images.unsplash.com/photo-1632783652065-77c05d7d7b0e?w=400&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1632783652065-77c05d7d7b0e?w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1632783652294-efd7d2f5594f?w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1632783652403-eea6d750e8f9?w=400&auto=format&fit=crop"
+    ],
+    "sizes": ["Small", "Medium", "Large"],
+    "features": ["Handcrafted", "Eco-friendly", "Traditional Design", "Blessed", "Gift Packed"],
+    "weight": "2-3 kg",
+    "finish": "Matte"
+  },
+  {
+    "id": 2,
+    "name": "Dancing Ganesha Brass Idol",
+    "description": "Elegant brass idol of dancing Ganesha, crafted by skilled artisans.",
+    "type": "brass",
+    "price": 4500,
+    "rating": 4.9,
+    "reviews": 89,
+    "image": "https://images.unsplash.com/photo-1632783652450-c09ab4d6b7a2?w=400&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1632783652450-c09ab4d6b7a2?w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1632783652563-1d2c7a8b1e2f?w=400&auto=format&fit=crop"
+    ],
+    "sizes": ["Medium", "Large"],
+    "features": ["Polished Brass", "Antique Finish", "Intricate Carvings", "Blessed"],
+    "weight": "3-5 kg",
+    "finish": "Polished"
+  }
+]
+}

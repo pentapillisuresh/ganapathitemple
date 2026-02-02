@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', ui-sans-serif, system-ui,  sans-serif;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%);
+}
+
+.temple-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('https://images.unsplash.com/photo-1621491510317-0015e75fddc7?w=1200') center/cover;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* For serif elements, you can add a class */
+.serif-font {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Custom color classes for the new palette */
+.bg-primary {
+  background-color: #FFF9EC;
+}
+
+.text-primary {
+  color: #FFF9EC;
+}
+
+.border-primary {
+  border-color: #FFF9EC;
+}
+
+.bg-secondary {
+  background-color: #EA580C;
+}
+
+.text-secondary {
+  color: #EA580C;
+}
+
+.border-secondary {
+  border-color: #EA580C;
+}
+
+.hover\:bg-secondary:hover {
+  background-color: #EA580C;
+}
+
+.hover\:text-secondary:hover {
+  color: #EA580C;
+}
+
+/* Custom gradient with new colors */
+.primary-gradient {
+  background: linear-gradient(135deg, #FFF9EC 0%, #FFE4B5 100%);
+}
+
+.secondary-gradient {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+}
