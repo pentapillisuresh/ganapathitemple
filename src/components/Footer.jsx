@@ -5,13 +5,9 @@ import {
   FaTwitter, 
   FaInstagram, 
   FaYoutube,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaClock,
   FaHeart
 } from 'react-icons/fa';
-import { Phone, Mail, MapPin, Clock, ChevronRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ChevronRight, Code } from 'lucide-react';
 
 const Footer = () => {
   const navItems = [
@@ -156,10 +152,26 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
             <div className="mb-4 md:mb-0">
-              <p>
-                © {new Date().getFullYear()} Ganapathi Temple. All rights reserved.
+              <p className="flex items-center flex-wrap gap-2">
+                <span>
+                  © {new Date().getFullYear()} Ganapathi Temple. All rights reserved.
+                </span>
+                <span className="text-gray-400">|</span>
+                <span className="flex items-center gap-1">
+                  {/* <Code className="w-3 h-3 text-secondary" /> */}
+                  Developed by 
+                 <a
+  href="https://esotericprojects.tech"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-semibold text-secondary ml-1 cursor-pointer"
+>
+  esotericprojects.tech
+</a>
+
+                </span>
               </p>
-              <p className="mt-1 text-xs">
+              <p className="mt-2 text-xs text-gray-500">
                 Registered as a Charitable Trust under the Societies Registration Act, 1860
               </p>
             </div>
@@ -176,17 +188,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="text-center mt-6 pt-6 border-t border-gray-200">
-            <div className="flex items-center justify-center gap-2 text-gray-600 text-xs">
-              <FaHeart className="text-red-500" />
-              <span>Made with devotion for the community</span>
-              <span className="mx-2">•</span>
-              <span>Donations eligible for 80G tax exemption</span>
-            </div>
-            <p className="text-xs text-gray-500 mt-2">
-              GST No: 27AAAAA0000A1Z5 | PAN: AAAAA1234A
-            </p>
-          </div>
+        
         </div>
       </div>
     </footer>
