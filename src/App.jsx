@@ -11,9 +11,10 @@ import IdolDetail from './components/IdolDetail';
 import IdolsList from './components/IdolsList';
 import Donation from './components/Donation';
 import BlogDetail from './components/BlogDetail';
-// import Blog from './components/Blog';
+import Blog from './components/Blog';
 import Login from './components/Login';
 import BookingConfirmation from './components/BookingConfirmation';
+import About from './components/About';
 import Footer from './components/Footer';
 import data from './data.json';
 
@@ -105,6 +106,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home data={data} />} />
+          <Route path="/about" element={<About />} />
           <Route path="/activities" element={<Activities data={data} />} />
           <Route path="/activity/:id" element={<ActivityDetail data={data} onBooking={addBooking} />} />
           <Route path="/ganapathis32" element={<Ganapathis32 data={data} />} />
@@ -115,6 +117,7 @@ function App() {
          <Route path="/idols/:id" element={<IdolDetail data={data} onOrder={addOrder} />} />
          <Route path="/idols" element={<IdolsList data={data} />} />
           <Route path="/donation" element={<Donation onDonation={addDonation} />} />
+          <Route path="/blog" element={<Blog data={data} />} />
        <Route path="/blog/:id" element={<BlogDetail data={data} />} />
           <Route path="/login" element={<Login />} />
           <Route 

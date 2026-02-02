@@ -70,3 +70,9 @@ body {
 .secondary-gradient {
   background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
 }
+
+/* Remove horizontal scrollbar globally */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
