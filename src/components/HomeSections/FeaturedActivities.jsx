@@ -82,16 +82,17 @@ const FeaturedActivities = ({ activities }) => {
                       </div>
                     </div>
                     
-                    {/* Round Button */}
-                    <div 
-                      onClick={(e) => e.preventDefault()}
+                    {/* Round Button - Now navigates to activity detail */}
+                    <Link 
+                      to={`/activity/${activity.id}`}
+                      onClick={(e) => e.stopPropagation()} // Prevent card link from triggering
                       className="relative z-10"
                     >
                       <div className="px-4 py-2.5 bg-secondary text-white rounded-full text-sm font-medium hover:bg-secondary-600 transition-all duration-200 flex items-center gap-1.5 group/btn shadow-sm hover:shadow-md">
                         <span className="whitespace-nowrap">Book Now</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,9 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, Users, ChevronRight, BookOpen, Sparkles, Shield, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, Users, ChevronRight, ChevronLeft, BookOpen, Sparkles, Shield, AlertCircle } from 'lucide-react';
 
 const Activities = ({ data }) => {
   const [selectedFilter, setSelectedFilter] = useState('all');
+
+  // Check if data exists and has activities property
+  if (!data || !data.activities) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <AlertCircle className="w-8 h-8 text-secondary" />
+          </div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No Data Available</h3>
+          <p className="text-gray-600">Please check if activities data is provided</p>
+        </div>
+      </div>
+    );
+  }
 
   const categories = [
     { id: 'all', label: 'All Activities', count: data.activities.length },
@@ -20,42 +35,28 @@ const Activities = ({ data }) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Professional Banner */}
-      <div className="relative h-[400px] bg-gradient-to-r from-primary via-primary to-secondary/20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        
-        <div className="relative h-full container mx-auto px-4 flex items-center">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center px-3 py-1 bg-secondary/10 rounded-full mb-4">
-              <BookOpen className="w-4 h-4 text-secondary mr-2" />
-              <span className="text-sm font-medium text-secondary">Sacred Activities</span>
-            </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Vedic Rituals & Ceremonies
-            </h1>
-            
-            <p className="text-gray-700 mb-6 max-w-xl">
-              Book authentic Vedic ceremonies and rituals performed by experienced temple priests with traditional purity
-            </p>
-            
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <div className="flex items-center">
-                <Users className="w-4 h-4 mr-1" />
-                <span>Experienced Priests</span>
+      <div className="relative h-[400px] overflow-hidden">
+        <img 
+          src="/images/about.avif"
+          alt="Temple Banner"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+              <div className="mb-4 lg:mb-0">
+                <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2">
+                  Ganapathi Temple
+                </h1>
               </div>
-              <span className="mx-2">•</span>
-              <div className="flex items-center">
-                <Shield className="w-4 h-4 mr-1" />
-                <span>Traditional Methods</span>
-              </div>
-              <span className="mx-2">•</span>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-1" />
-                <span>Flexible Scheduling</span>
-              </div>
+              <Link 
+                to="/activities" 
+                className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm hover:bg-white/30 transition-all duration-300 border border-white/30"
+              >
+                <ChevronLeft className="w-3 h-3 mr-1" />
+                Back to Activities
+              </Link>
             </div>
           </div>
         </div>
@@ -103,56 +104,66 @@ const Activities = ({ data }) => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredActivities.map((activity) => (
-              <div key={activity.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative h-48 bg-primary">
-                  <img 
-                    src={activity.image} 
-                    alt={activity.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 bg-white/90 backdrop-blur-sm rounded text-xs text-gray-700">
-                      {activity.category === 'daily' ? 'Daily' : 
-                       activity.category === 'festival' ? 'Festival' : 
-                       activity.category === 'special' ? 'Special' : 'Personal'}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {activity.name}
-                  </h3>
-                  
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                    {activity.description}
-                  </p>
-                  
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {activity.duration}
+          {filteredActivities.length === 0 ? (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-gray-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">No rituals found</h3>
+              <p className="text-gray-600">Try selecting a different category</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredActivities.map((activity) => (
+                <div key={activity.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="relative h-48 bg-primary">
+                    <img 
+                      src={activity.image} 
+                      alt={activity.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2 py-1 bg-white/90 backdrop-blur-sm rounded text-xs text-gray-700">
+                        {activity.category === 'daily' ? 'Daily' : 
+                         activity.category === 'festival' ? 'Festival' : 
+                         activity.category === 'special' ? 'Special' : 'Personal'}
+                      </span>
                     </div>
-                    <div>
-                      <div className="text-sm text-gray-500">From</div>
-                      <div className="text-xl font-bold text-secondary">
-                        ₹{activity.price.toLocaleString()}
+                  </div>
+                  
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {activity.name}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      {activity.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {activity.duration}
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500">From</div>
+                        <div className="text-xl font-bold text-secondary">
+                          ₹{activity.price ? activity.price.toLocaleString() : '0'}
+                        </div>
                       </div>
                     </div>
+                    
+                    <Link
+                      to={`/activity/${activity.id}`}
+                      className="block w-full text-center px-4 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-[#C2410C] transition-colors"
+                    >
+                      Book Now
+                    </Link>
                   </div>
-                  
-                  <Link
-                    to={`/activity/${activity.id}`}
-                    className="block w-full text-center px-4 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-[#C2410C] transition-colors"
-                  >
-                    Book Now
-                  </Link>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Important Information */}

@@ -119,7 +119,7 @@ const ActivityDetail = ({ data, onBooking }) => {
       {/* Compact Banner Section */}
       <div className="relative h-[400px] overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1638219955360-b16c0d61d49f?w=1600&auto=format&fit=crop"
+          src="/images/about.avif"
           alt="Temple Banner"
           className="w-full h-full object-cover"
         />

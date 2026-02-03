@@ -4,29 +4,33 @@ import {
   ChevronRight,
   Heart,
   Calendar,
-  HandHeart,
+  Building,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const BannerCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const videoRefs = useRef([]);
+  const videoRef = useRef(null);
   const navigate = useNavigate();
 
   const bannerData = [
     {
-      video: "./videos/temple2.mp4", // Replace with your video path
+      type: "video",
+      video: "./videos/temple2.mp4",
+      poster: "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       subtitle: "Experience Divine Blessings Through Traditional Worship",
       line1: "శ్రీ చింతామణి గణపతి దత్త క్షేత్రము",
     },
     {
-      video: "./videos/banner-video2.mp4", // Replace with your video path
+      type: "image",
+      image: "/images/banner2.jpg",
       subtitle: "Experience Spiritual Enlightenment and Inner Peace",
       line1: "32 Forms of Ganapathi",
     },
     {
-      video: "./videos/banner-video3.mp4", // Replace with your video path
+      type: "image",
+      image: "/images/banner3.jpg",
       subtitle: "Experience Divine Blessings Through Traditional Worship",
       line1: "Daily Poojas & Special Ceremonies",
     },
@@ -34,16 +38,14 @@ const BannerCarousel = () => {
 
   // Handle video playback
   useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentSlide) {
-          video.play().catch(e => console.log("Auto-play prevented:", e));
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
+    if (videoRef.current) {
+      if (currentSlide === 0) {
+        videoRef.current.play().catch(e => console.log("Auto-play prevented:", e));
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
       }
-    });
+    }
   }, [currentSlide]);
 
   // Auto-play carousel
@@ -52,7 +54,7 @@ const BannerCarousel = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerData.length);
-    }, 15000); // Increased time for videos
+    }, 10000); // 10 seconds per slide
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, bannerData.length]);
@@ -70,49 +72,56 @@ const BannerCarousel = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden bg-primary">
       <div className="relative w-full h-full">
         {bannerData.map((banner, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-all duration-1000 ${
-              index === currentSlide
+            className={`absolute inset-0 w-full h-full transition-all duration-1000 ${index === currentSlide
                 ? "opacity-100 z-10"
                 : "opacity-0 z-0 pointer-events-none"
-            }`}
+              }`}
           >
-            {/* Video Background */}
+            {/* Background - Video for first slide, Images for others */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-              <video
-                ref={el => videoRefs.current[index] = el}
-                className={`w-full h-full object-cover ${
-                  index === currentSlide ? "animate-videoZoom" : ""
-                }`}
-                src={banner.video}
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={banner.poster} // Optional: Add poster image for loading
-              />
-              {/* Fallback image if video doesn't load */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
+              {banner.type === "video" ? (
+                <video
+                  ref={index === 0 ? videoRef : null}
+                  className={`w-full h-full object-cover ${index === currentSlide ? "animate-videoZoom" : ""
+                    }`}
+                  src={banner.video}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={banner.poster}
+                />
+              ) : (
+                <img
+                  src={banner.image}
+                  alt={banner.line1}
+                  className={`w-full h-full object-cover ${index === currentSlide ? "animate-imageZoom" : ""
+                    }`}
+                  loading="lazy"
+                />
+              )}
+
+              {/* Solid overlay for better text visibility without gradients */}
+              <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}
             <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-5xl mx-auto">
-                {/* Temple Name */}
+                {/* Temple Name with serif font */}
                 <div
-                  className={`mb-6 ${
-                    index === currentSlide
+                  className={`mb-6 ${index === currentSlide
                       ? "animate-titleStagger"
                       : "opacity-0"
-                  }`}
+                    }`}
                 >
                   <h1
-                    style={{ fontFamily: "serif" }}
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 text-white leading-tight drop-shadow-2xl"
+                    className="serif-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 text-primary leading-tight drop-shadow-2xl"
                   >
                     {banner.line1}
                   </h1>
@@ -120,92 +129,93 @@ const BannerCarousel = () => {
 
                 {/* Subtitle */}
                 <p
-                  className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 leading-relaxed font-medium drop-shadow-lg ${
-                    index === currentSlide
+                  className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary/95 mb-8 leading-relaxed font-medium drop-shadow-lg ${index === currentSlide
                       ? "animate-subtitleIn"
                       : "opacity-0"
-                  }`}
+                    }`}
                 >
                   {banner.subtitle}
                 </p>
 
-                {/* Buttons */}
-                {/* <div
-                  className={`flex flex-col sm:flex-row gap-4 justify-center ${
-                    index === currentSlide
+                {/* Buttons - Using requested buttons */}
+                <div
+                  className={`flex flex-col sm:flex-row gap-4 justify-center ${index === currentSlide
                       ? "animate-buttonsIn"
                       : "opacity-0"
-                  }`}
+                    }`}
                 >
+                  {/* Donate Now Button - Primary color */}
                   <button
                     onClick={() => navigate("/donation")}
-                    className="group border-2 border-secondary text-white bg-secondary/90 backdrop-blur-sm px-6 py-3 rounded-full font-semibold hover:bg-secondary hover:shadow-2xl transition-all duration-300 shadow-xl flex items-center gap-2 hover:scale-105"
+                    className="group bg-primary text-secondary hover:bg-secondary hover:text-primary border-2 border-primary px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl flex items-center justify-center gap-2 hover:scale-105 text-lg min-w-[180px]"
                   >
-                    <Heart size={18} />
+                    <Heart size={20} />
                     Donate Now
                   </button>
 
+                  {/* Activity Button - Secondary color */}
                   <button
-                    onClick={() => navigate("/appointment")}
-                    className="group border-2 border-secondary text-white bg-secondary/90 backdrop-blur-sm px-6 py-3 rounded-full font-semibold hover:bg-secondary hover:shadow-2xl transition-all duration-300 shadow-xl flex items-center gap-2 hover:scale-105"
+                    onClick={() => navigate("/activities")}
+                    className="group bg-secondary text-primary hover:bg-primary hover:text-secondary border-2 border-secondary px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl flex items-center justify-center gap-2 hover:scale-105 text-lg min-w-[180px]"
                   >
-                    <Calendar size={18} />
-                    Book Ritual
+                    <Calendar size={20} />
+                    Activity
                   </button>
 
+                  {/* Halls Button - Primary color */}
                   <button
-                    onClick={() => navigate("/volunteer")}
-                    className="group border-2 border-secondary text-white bg-secondary/90 backdrop-blur-sm px-6 py-3 rounded-full font-semibold hover:bg-secondary hover:shadow-2xl transition-all duration-300 shadow-xl flex items-center gap-2 hover:scale-105"
+                    onClick={() => navigate("/banquetHalls")}
+                    className="group bg-primary text-secondary hover:bg-secondary hover:text-primary border-2 border-primary px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-xl flex items-center justify-center gap-2 hover:scale-105 text-lg min-w-[180px]"
                   >
-                    <HandHeart size={18} />
-                    Volunteer
+                    <Building size={20} />
+                    Halls
                   </button>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Arrows */}
+      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 backdrop-blur-sm p-3 rounded-full text-white transition-all duration-300 hover:scale-110"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-secondary/90 hover:bg-secondary text-primary p-4 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl border-2 border-primary"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={22} />
+        <ChevronLeft size={26} />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 backdrop-blur-sm p-3 rounded-full text-white transition-all duration-300 hover:scale-110"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-secondary/90 hover:bg-secondary text-primary p-4 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl border-2 border-primary"
         aria-label="Next slide"
       >
-        <ChevronRight size={22} />
+        <ChevronRight size={26} />
       </button>
 
-      {/* Dots */}
+      {/* Dots Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {bannerData.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
-              index === currentSlide
-                ? "bg-secondary border-secondary scale-125"
-                : "border-white/60 hover:border-white"
-            }`}
+            className={`w-4 h-4 rounded-full border-2 transition-all duration-300 hover:scale-125 ${index === currentSlide
+                ? "bg-secondary border-secondary scale-125 shadow-lg"
+                : "border-primary hover:border-secondary bg-transparent"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Pause/Play Auto-scroll */}
+      {/* Auto-play Toggle */}
       {/* <button
         onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-        className="absolute top-4 right-4 z-20 bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm hover:bg-black/60 transition-all"
+        className="absolute top-6 right-6 z-20 bg-secondary/90 hover:bg-secondary text-primary px-4 py-2 rounded-full text-sm transition-all border-2 border-primary hover:scale-105 flex items-center gap-2"
       >
-        {isAutoPlaying ? "Pause" : "Play"}
+        <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-primary' : 'bg-red-400'}`} />
+        {isAutoPlaying ? "Auto Playing" : "Paused"}
       </button> */}
 
       {/* Animations */}
@@ -218,6 +228,16 @@ const BannerCarousel = () => {
             transform: scale(1);
           }
         }
+        
+        @keyframes imageZoom {
+          0% {
+            transform: scale(1.05);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        
         @keyframes titleStagger {
           from { 
             opacity: 0; 
@@ -230,6 +250,7 @@ const BannerCarousel = () => {
             filter: blur(0);
           }
         }
+        
         @keyframes subtitleIn {
           from { 
             opacity: 0; 
@@ -242,6 +263,7 @@ const BannerCarousel = () => {
             filter: blur(0);
           }
         }
+        
         @keyframes buttonsIn {
           from { 
             opacity: 0; 
@@ -254,27 +276,114 @@ const BannerCarousel = () => {
             filter: blur(0);
           }
         }
+        
         .animate-videoZoom { 
-          animation: videoZoom 15s ease-in-out infinite alternate;
+          animation: videoZoom 20s ease-in-out infinite alternate;
         }
+        
+        .animate-imageZoom { 
+          animation: imageZoom 20s ease-in-out infinite alternate;
+        }
+        
         .animate-titleStagger { 
           animation: titleStagger 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
+        
         .animate-subtitleIn { 
           animation: subtitleIn 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.2s;
         }
+        
         .animate-buttonsIn { 
           animation: buttonsIn 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s;
-        }
-        body { 
-          overflow-x: hidden;
-          margin: 0;
-          padding: 0;
         }
         
         /* Smooth transitions */
         * {
           transition: opacity 0.3s ease;
+        }
+        
+        /* Improve image loading */
+        img {
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 640px) {
+          .absolute.bottom-8 {
+            bottom: 4rem;
+          }
+          
+          .absolute.top-6 {
+            top: 1rem;
+            right: 1rem;
+          }
+          
+          button.bg-secondary\\/90 {
+            padding: 0.75rem;
+          }
+          
+          .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+          }
+          
+          .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+          }
+          
+          .flex.flex-col.sm\\:flex-row {
+            gap: 0.75rem;
+          }
+          
+          .px-8 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          .py-4 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+          }
+          
+          .min-w-\\[180px\\] {
+            min-width: 160px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .text-3xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+          
+          .text-lg {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+          
+          .flex.flex-col {
+            gap: 0.5rem;
+          }
+          
+          .min-w-\\[180px\\] {
+            min-width: 140px;
+          }
+          
+          .px-8 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+          }
+          
+          .py-4 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+          
+          .text-lg {
+            font-size: 0.875rem;
+          }
         }
       `}</style>
     </section>

@@ -325,11 +325,11 @@
     "price": 2500,
     "rating": 4.8,
     "reviews": 124,
-    "image": "https://images.unsplash.com/photo-1632783652065-77c05d7d7b0e?w=400&auto=format&fit=crop",
+    "image": "/images/ganesh1.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1632783652065-77c05d7d7b0e?w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1632783652294-efd7d2f5594f?w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1632783652403-eea6d750e8f9?w=400&auto=format&fit=crop"
+      "/images/ganesh1.jpeg",
+      "/images/ganesh1.jpeg"
+      
     ],
     "sizes": ["Small", "Medium", "Large"],
     "features": ["Handcrafted", "Eco-friendly", "Traditional Design", "Blessed", "Gift Packed"],
@@ -344,10 +344,28 @@
     "price": 4500,
     "rating": 4.9,
     "reviews": 89,
-    "image": "https://images.unsplash.com/photo-1632783652450-c09ab4d6b7a2?w=400&auto=format&fit=crop",
+    "image": "/images/ganesh2.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1632783652450-c09ab4d6b7a2?w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1632783652563-1d2c7a8b1e2f?w=400&auto=format&fit=crop"
+      "/images/ganesh2.jpeg",
+      "/images/ganesh2.jpeg"
+    ],
+    "sizes": ["Medium", "Large"],
+    "features": ["Polished Brass", "Antique Finish", "Intricate Carvings", "Blessed"],
+    "weight": "3-5 kg",
+    "finish": "Polished"
+  },
+   {
+    "id": 3,
+    "name": "Dancing Ganesha Brass Idol",
+    "description": "Elegant brass idol of dancing Ganesha, crafted by skilled artisans.",
+    "type": "brass",
+    "price": 4500,
+    "rating": 4.9,
+    "reviews": 89,
+    "image": "/images/ganesh3.jpeg",
+    "images": [
+      "/images/ganesh3.jpeg",
+      "/images/ganesh3.jpeg"
     ],
     "sizes": ["Medium", "Large"],
     "features": ["Polished Brass", "Antique Finish", "Intricate Carvings", "Blessed"],
