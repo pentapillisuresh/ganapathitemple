@@ -434,16 +434,18 @@ function AboutTemple() {
               </div>
             </div>
 
-           <div className="lg:col-span-2">
+ <div className="lg:col-span-2">
   <div className="bg-white rounded-xl overflow-hidden shadow-lg h-full">
+    
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60816.84435847662!2d82.93623102167969!3d17.694967000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3970dbbd88ca97%3A0x1077f616bc709eae!2sAnakapalle!5e0!3m2!1sen!2sin!4v1770188312737!5m2!1sen!2sin"
+      title="Sri Chintamani Ganapathi Temple Location"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3801.145488034216!2d83.066635!3d17.690586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a397032ebdee14b%3A0xa1052f6792a634bc!2sSri%20Chintamani%20Ganapathi%20Temple!5e0!3m2!1sen!2sin!4v1770191528916!5m2!1sen!2sin"
       className="w-full h-[450px]"
       style={{ border: 0 }}
       allowFullScreen
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
+    />
 
     <div className="p-4 border-t border-gray-200">
       <div className="flex flex-wrap items-center justify-between gap-4">
@@ -467,8 +469,10 @@ function AboutTemple() {
         </a>
       </div>
     </div>
+
   </div>
 </div>
+
 
           </div>
 
