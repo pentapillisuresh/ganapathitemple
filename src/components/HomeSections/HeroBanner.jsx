@@ -18,7 +18,7 @@ const BannerCarousel = () => {
     {
       type: "video",
       video: "./videos/temple2.mp4",
-      poster: "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      // poster: "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       subtitle: "Experience Divine Blessings Through Traditional Worship",
       line1: "శ్రీ చింతామణి గణపతి దత్త క్షేత్రము",
     },

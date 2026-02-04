@@ -404,7 +404,7 @@ function AboutTemple() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">By Car/Taxi</h3>
                   <p className="text-gray-600 text-sm">
-                    Located on Temple Road, Secunderabad. Ample parking available for 100+ vehicles.
+                    Located on Temple Road, Anakapalle. Ample parking available for 100+ vehicles.
                   </p>
                 </div>
               </div>
@@ -434,35 +434,42 @@ function AboutTemple() {
               </div>
             </div>
 
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg h-full">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6284448181584!2d78.48319!3d17.385044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890"
-                  width="100%"
-                  height="300"
-                  className="border-0"
-                  loading="lazy"
-                  allowFullScreen
-                  title="Ganapathi Temple Location"
-                ></iframe>
-                <div className="p-4 border-t border-gray-200">
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div>
-                      <div className="font-medium text-gray-900">Sri Ganapathi Temple</div>
-                      <div className="text-sm text-gray-600">Temple Road, Secunderabad, Hyderabad - 500003</div>
-                    </div>
-                    <a 
-                      href="https://maps.google.com/?q=Sri+Ganapathi+Temple+Secunderabad"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-secondary text-white rounded-lg text-sm font-medium hover:bg-[#C2410C] transition-colors"
-                    >
-                      Get Directions
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+           <div className="lg:col-span-2">
+  <div className="bg-white rounded-xl overflow-hidden shadow-lg h-full">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60816.84435847662!2d82.93623102167969!3d17.694967000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3970dbbd88ca97%3A0x1077f616bc709eae!2sAnakapalle!5e0!3m2!1sen!2sin!4v1770188312737!5m2!1sen!2sin"
+      className="w-full h-[450px]"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <div className="p-4 border-t border-gray-200">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div className="font-medium text-gray-900">
+            Sri Chintamani Ganapati Datta Kshetra
+          </div>
+          <div className="text-sm text-gray-600">
+            Sirasapally, NH-16, Opposite Tadi Railway Station,  
+            Anakapalle Mandal, Anakapalle District
+          </div>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Sirasapally,+NH-16,+Opposite+Tadi+Railway+Station,+Anakapalle"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-2 bg-secondary text-white rounded-lg text-sm font-medium hover:bg-[#C2410C] transition-colors"
+        >
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
 
           {/* Contact Information */}
